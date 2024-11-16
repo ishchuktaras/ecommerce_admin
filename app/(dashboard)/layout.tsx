@@ -5,7 +5,7 @@ import {ClerkProvider} from '@clerk/nextjs';
 const inter = Inter({ subsets: ['latin']});
 
 export const metadata: Metadata = {
-  title: "ecommerce MILITARIK_ Auth",
+  title: "ecommerce MILITARIK_Dashboard",
   description: "ARMADA VOJENSKÁ ZABEZPEČENI PŘEŽITÍ OUTDOOROVÉ OBLEČENÍ"
 };
 
