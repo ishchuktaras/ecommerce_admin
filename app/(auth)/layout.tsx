@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import {ClerkProvider} from '@clerk/nextjs';
+import { ClerkProvider } from '@clerk/nextjs';
+import LeftSideBar from "@/components/layout/LeftSideBar";
 
-const inter = Inter({ subsets: ['latin']});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "ecommerce MILITARIK_ Auth",
@@ -16,13 +17,14 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-    <html lang="en">
-      <body
-        className={inter.className}
-      >
-        {children}
-      </body>
-    </html>
+      <html lang="en">
+        <body
+          className={inter.className}
+        >
+          <LeftSideBar />
+          {children}
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
