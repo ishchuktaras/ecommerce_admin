@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs';
 import "./globals.css";
 
 const geistSans = localFont({
@@ -14,9 +21,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ecommerce MILITARIK",
-  description: "ARMÁDA VOJENSKÁ ZABEZPEČENÍ
-PŘEŽITÍ OUTDOOROVÉ OBLEČENÍ",
+  title: "ecommerce MILITARIK-Admin",
+  description: "Admin dashboard to manege MILITARIK"
 };
 
 export default function RootLayout({
@@ -25,6 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider>
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -32,5 +39,6 @@ export default function RootLayout({
         {children}
       </body>
     </html>
+    </ClerkProvider>
   );
 }
